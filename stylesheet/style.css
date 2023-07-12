@@ -1,0 +1,272 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap'); */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+li,
+a {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+#click {
+    display: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 100vw;
+    border-bottom: 1px solid gray;
+}
+
+.nav__links {
+    list-style: none;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    background-color: #0034c8;
+    height: 100vh;
+    width: 100%;
+    display: block;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+
+
+#click:not(:checked)~.nav__links {
+    left: -100%;
+}
+
+#click:checked~.nav__links {
+    left: 0%;
+}
+
+#click:checked~.menu-btn i:before {
+    content: "\f00d";
+    color: #f2f2f2;
+    position: fixed;
+    top: 13%;
+    left: 8%;
+}
+
+.fa-bars:before,
+.fa-navicon:before {
+    font-size: 40px;
+}
+
+.menu-btn:checked+.nav__links {
+    display: block;
+}
+
+.nav__links li {
+    display: inline-block;
+    margin-top: 13px;
+    /* position: relative; */
+    /* padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 20px;
+	padding-right: 20px; */
+}
+
+.links {
+    position: relative;
+}
+
+.links li a {
+    transition: all 0.3s ease 0s;
+    color: #f2f2f2;
+    font-size: 30px;
+}
+
+.nav__links li a:hover,
+.active {
+    color: #0088A9;
+}
+
+button:hover {
+    background-color: rgba(0, 136, 169, 0.8);
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.menu-btn {
+    color: black;
+    cursor: pointer;
+    z-index: 2;
+    /* padding-left: 10px; */
+    /* position: relative;
+    left: -7%; */
+}
+
+/* -------------  Container  ----------- */
+.container {
+    display: flex;
+    height: 100%;
+    text-align: center;
+    /* gap: 20px; */
+}
+
+.grid-items {
+    line-height: 1.5;
+}
+
+.container-items {
+    margin: 10px;
+    border-right: 1px solid gray;
+    padding: 0 15px 0 0;
+}
+
+.grid-items p {
+    font-size: 14px;
+}
+
+.grid-items a {
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+}
+
+.container-text {
+    display: flex;
+    align-items: center;
+    column-gap: 3px;
+}
+
+.own-title .name-title {
+    font-size: 25px;
+    font-weight: 100;
+}
+
+p .sub-name {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+/* --------------- Media Query -------------- */
+@media (max-width: 768px) {
+
+    header {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px 0;
+        height: 190px;
+        background: cadetblue;
+    }
+
+    .container-items {
+        border-right: none;
+        margin: 0;
+    }
+
+    .container-text {
+        display: block;
+
+    }
+
+    .nav__links li {
+        display: block;
+        margin-top: 40px;
+    }
+
+    .menu-btn {
+        align-self: flex-end;
+        /* display: inline-block;
+        z-index: 2; */
+        margin-right: 45px;
+    }
+
+    .fas {
+        font-size: 44px;
+    }
+
+    .nav-contact {
+        display: none;
+    }
+
+    .links {
+        position: relative;
+    }
+
+    #click:checked~.menu-btn i:before {
+        background: white;
+        color: black;
+        padding: 13px;
+        position: relative;
+        top: 13%;
+        left: 75%;
+    }
+
+
+    
+}
+
+
+@media (max-width: 375px) {
+
+    .container-text {
+        display: block;
+    }
+
+    .container-items {
+        border-right: none;
+        padding: 0;
+        margin: 0 14px;
+    }
+
+    links {
+        position: relative;
+        top: 8%;
+    }
+
+    .links li a {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 360px) {
+    .container-items {
+        padding: 10px;
+        margin: 0;
+    }
+
+    .fa-bars:before {
+        font-size: 30px;
+    }
+
+    .grid-items a {
+        font-size: 22px;
+    }
+
+    .links {
+        text-align: justify;
+        position: relative;
+        top: 10%;
+        left: 30%;
+    }
+
+    .links li a {
+        font-size: 20px;
+    }
+}
